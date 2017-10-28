@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  greeting: MyText
+  number: MyString
+  whatsapp: false
+  phone: false
+  user_id: 1
+
+two:
+  name: MyString
+  greeting: MyText
+  number: MyString
+  whatsapp: false
+  phone: false
+  user_id: 1
