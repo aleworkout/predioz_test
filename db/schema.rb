@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171028192111) do
+ActiveRecord::Schema.define(version: 20171028232223) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
     t.text     "detail"
-    t.integer  "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "shop_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20171028192111) do
     t.string   "number"
     t.boolean  "whatsapp"
     t.boolean  "phone"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "user_email"
   end
 
   create_table "users", force: :cascade do |t|
