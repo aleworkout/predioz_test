@@ -1,24 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<h1><%= @product.shop.name %></h1>
+<h3><%= @product.shop.number %></h3>
+            <% if @product.shop.whatsapp %>
+              <ul>
+                <li>Tengo Whatsapp</li>
+              </ul>
+            <% end %>
+            <% if @product.shop.phone %>
+              <ul>
+                <li>Puedes Llamarme</li>
+              </ul>
+            <% end %>
+            
+<div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="http://img.viajeabrasil.com/platos-tipicos-brasil.jpg" alt="imagen_tienda">
+          <div class="caption">
+            <h3><%= @product.name %></h3>
+            <p>$<%= @product.price %>.-</p>
+            <p><%= @product.detail %></p>
+          </div>
+        </div>
+      </div>
+  </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Detail:</strong>
-  <%= @product.detail %>
-</p>
-
-<p>
-  <strong>Shop:</strong>
-  <%= @product.shop_id %>
-</p>
-
+<% if current_user.id == @product.user_id %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+<% end %>

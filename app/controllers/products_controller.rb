@@ -7,15 +7,6 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
   
-  before_filter :require_permission, only: :edit
-  def require_permission
-    @users = User.all
-    @shops = current_user.shops
-    if current_user.email != @shops.find(params[:id]).user_email
-      redirect_to root_path
-      #Or do something else here
-    end
-  end
 
   # GET /products/1
   # GET /products/1.json
@@ -26,18 +17,19 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-    @shops = Shop.all
+    @shops = current_user.shops
   end
 
   # GET /products/1/edit
   def edit
+    @shops = Shop.all
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
-    
+    @product.user_id = current_user.id if current_user
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }

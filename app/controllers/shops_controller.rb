@@ -9,7 +9,7 @@ class ShopsController < ApplicationController
   
   before_filter :require_permission, only: :edit
   def require_permission
-    if current_user.email != Shop.find(params[:id]).user_email
+    if current_user.id != Shop.find(params[:id]).user_id
       redirect_to root_path
       #Or do something else here
     end
@@ -17,7 +17,7 @@ class ShopsController < ApplicationController
   
   before_filter :require_permiso, only: :destroy
   def require_permiso
-    if current_user.email != Shop.find(params[:id]).user_email
+    if current_user.id != Shop.find(params[:id]).user_id
       redirect_to root_path
       #Or do something else here
     end
@@ -43,7 +43,7 @@ class ShopsController < ApplicationController
   # POST /shops.json
   def create
     @shop = Shop.new(shop_params)
-    @shop.user_email = current_user.email if current_user
+    @shop.user_id = current_user.id if current_user
     respond_to do |format|
       if @shop.save
         format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
@@ -87,6 +87,6 @@ class ShopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
-      params.require(:shop).permit(:name, :greeting, :number, :whatsapp, :phone, :user_email)
+      params.require(:shop).permit(:name, :greeting, :number, :whatsapp, :phone, :user_id)
     end
 end
