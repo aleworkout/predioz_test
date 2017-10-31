@@ -5,6 +5,7 @@ gem 'starter_generators'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'ransack'
 gem 'paperclip', '~> 5.1'
+gem 'client_side_validations'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
