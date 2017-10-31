@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'starter_generators'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
+gem 'ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
