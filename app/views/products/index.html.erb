@@ -11,21 +11,23 @@
   <% end %>
 </div>
 
-<h1>Listing Products</h1>
+<h1>Todos los productos</h1>
+<%= link_to 'Nuevo Producto', new_product_path, role: 'button', class: 'btn btn-warning btn-block' %>
+<hr />
   <div class="row">
     <% @products.each do |product| %>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://img.viajeabrasil.com/platos-tipicos-brasil.jpg" alt="imagen_tienda">
+          <%= image_tag product.img %>
           <div class="caption">
             <h3><%= product.name %></h3>
             <p>$<%= product.price %>.-</p>
             <h4><%= product.shop.name %></h4>
             <p>
-            <%= link_to 'VER', product, role: 'button', class: 'btn btn-primary' %>
+            <%= link_to 'VER', product, role: 'button', class: 'btn btn-success btn-sm' %>
             <% if current_user.id == product.user_id %>
-              <%= link_to 'Editar', edit_product_path(product), role: 'button', class: 'btn btn-primary' %>
-              <%= link_to 'Destruir', product, method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class: 'btn btn-primary' %>
+              <%= link_to 'Editar', edit_product_path(product), role: 'button', class: 'btn btn-success btn-sm' %>
+              <%= link_to 'Destruir', product, method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class: 'btn btn-success btn-sm' %>
             <% end %>  
             </p>
           </div>

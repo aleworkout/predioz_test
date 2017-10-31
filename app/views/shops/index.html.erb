@@ -13,13 +13,15 @@
 
 <h1>Listing Shops</h1>
 <%= link_to "Mis tiendas", user_shops_path(@shops), role: 'button', class: 'btn btn-success btn-xs' %>
+<hr />
+<%= link_to 'Nueva Tienda', new_shop_path, role: 'button', class: 'btn btn-warning btn-block' %>
   <div class="row">
     <br />
     <% @shops.each do |shop| %>
     
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://img.viajeabrasil.com/platos-tipicos-brasil.jpg" alt="imagen_tienda">
+          <%= image_tag shop.img %>
           <div class="caption">
             <h3><%= shop.name %></h3>
             <p>"<%= shop.greeting %>".</p>
@@ -35,10 +37,10 @@
               </ul>
             <% end %>
             <p>
-            <%= link_to 'VITRINEAR', shop, role: 'button', class: 'btn btn-primary' %>
+            <%= link_to 'VITRINEAR', shop, role: 'button', class: 'btn btn-success btn-sm' %>
             <% if current_user.id == shop.user_id %>
-              <%= link_to 'Editar', edit_shop_path(shop), role: 'button', class: 'btn btn-primary' %>
-              <%= link_to 'Destruir', shop, method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class: 'btn btn-primary' %>
+              <%= link_to 'Editar', edit_shop_path(shop), role: 'button', class: 'btn btn-success btn-sm' %>
+              <%= link_to 'Destruir', shop, method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class: 'btn btn-success btn-sm' %>
             <% end %>  
             </p>
           </div>
