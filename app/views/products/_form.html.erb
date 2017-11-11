@@ -12,23 +12,23 @@
   <% end %>
   
   <div class="field">
-    <%= f.label 'Imagen de producto' %><br>
+    <%= f.label 'Foto do produto' %><br>
     <%= f.attachment_field :image %>
   </div>
   <div class="field">
-    <%= f.label 'Nombre del producto' %><br>
+    <%= f.label 'Nome do produto' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label 'Precio' %><br>
+    <%= f.label 'Preço' %><br>
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label 'Detalles' %><br>
+    <%= f.label 'Detalhes' %><br>
     <%= f.text_area :detail %>
   </div>
   <div class="field">
-    <%= f.label 'Elija su tienda' %><br>
+    <%= f.label 'Escolha a loja que precisa' %><br>
     <%= f.collection_select :shop_id, @shops, :id, :name %>
   </div>
   <div class="actions">
