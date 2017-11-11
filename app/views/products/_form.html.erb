@@ -13,25 +13,25 @@
   
   <div class="field">
     <%= f.label 'Imagen de producto' %><br>
-    <%= f.file_field :img, as: :file %>
+    <%= f.attachment_field :image %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label 'Nombre del producto' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
+    <%= f.label 'Precio' %><br>
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label :detail %><br>
+    <%= f.label 'Detalles' %><br>
     <%= f.text_area :detail %>
   </div>
   <div class="field">
-    <%= f.label :shop_id %><br>
+    <%= f.label 'Elija su tienda' %><br>
     <%= f.collection_select :shop_id, @shops, :id, :name %>
   </div>
   <div class="actions">
-    <%= f.submit class: 'btn btn-primary' %>
+    <%= f.submit class: 'btn btn-primary', role: 'button', class: 'btn btn-success btn-sm' %>
   </div>
 <% end %>

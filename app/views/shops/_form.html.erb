@@ -13,30 +13,30 @@
   
   <div class="field">
     <%= f.label 'Imagen de tienda' %><br>
-    <%= f.file_field :img, as: :file %>
+    <%= f.attachment_field :image %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label 'Nombre de tienda' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :greeting %><br>
+    <%= f.label 'Saludo' %><br>
     <%= f.text_area :greeting %>
   </div>
   <div class="field">
-    <%= f.label :number %><br>
+    <%= f.label 'Celular' %><br>
     <%= f.text_field :number %>
   </div>
   <div class="field">
-    <%= f.label :whatsapp %><br>
+    <%= f.label 'Tiene whatsapp?' %><br>
     <%= f.check_box :whatsapp %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br>
+    <%= f.label 'Pueden llamarle?' %><br>
     <%= f.check_box :phone %>
   </div>
   
   <div class="actions">
-    <%= f.submit class: 'btn btn-primary' %>
+    <%= f.submit class: 'btn btn-primary', role: 'button', class: 'btn btn-success btn-sm' %>
   </div>
 <% end %>

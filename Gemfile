@@ -4,7 +4,8 @@ gem 'devise'
 gem 'starter_generators'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'ransack'
-gem 'paperclip', '~> 5.1'
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
 gem 'client_side_validations'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

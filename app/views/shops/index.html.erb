@@ -21,7 +21,7 @@
     
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <%= image_tag shop.img %>
+          <%= image_tag attachment_url(shop, :image, :fill, 300, 300, format: "jpg") %>
           <div class="caption">
             <h3><%= shop.name %></h3>
             <p>"<%= shop.greeting %>".</p>
