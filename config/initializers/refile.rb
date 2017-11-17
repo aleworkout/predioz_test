@@ -1,1 +1,0 @@
-Refile.backends['store'] = Refile::Backend::FileSystem.new(Rails.root.join('tmp').to_s)

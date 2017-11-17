@@ -30,7 +30,7 @@
       <% if product.shop_id == @shop.id %>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <%= image_tag attachment_url(product, :image, :fill, 300, 300, format: "jpg") %>
+          <%= image_tag(product.image_url) if product.image? %><br>
           <div class="caption">
             <h3><%= product.name %></h3>
             <p>$<%= product.price %> (CLP)</p>

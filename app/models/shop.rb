@@ -1,7 +1,7 @@
 class Shop < ActiveRecord::Base
     has_many :products
     belongs_to :user 
-    attachment :image
+    mount_uploader :image, ImageUploader
     
     def validate
         true

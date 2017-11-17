@@ -11,21 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111202737) do
+ActiveRecord::Schema.define(version: 20171117175849) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
     t.text     "detail"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "shop_id"
     t.integer  "user_id"
-    t.string   "img_file_name"
-    t.string   "img_content_type"
-    t.integer  "img_file_size"
-    t.datetime "img_updated_at"
-    t.string   "image_id"
+    t.string   "image"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -35,13 +31,9 @@ ActiveRecord::Schema.define(version: 20171111202737) do
     t.boolean  "whatsapp"
     t.boolean  "phone"
     t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "img_file_name"
-    t.string   "img_content_type"
-    t.integer  "img_file_size"
-    t.datetime "img_updated_at"
-    t.string   "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
   end
 
   create_table "users", force: :cascade do |t|
