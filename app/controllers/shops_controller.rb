@@ -35,8 +35,8 @@ class ShopsController < ApplicationController
   # GET /shops/new
   def new
     @shop = Shop.new
+    @shop = params[:file]
   end
-  
 
   # GET /shops/1/edit
   def edit

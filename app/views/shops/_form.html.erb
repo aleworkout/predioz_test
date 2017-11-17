@@ -12,7 +12,6 @@
   <% end %>
   
   <div class="field">
-    <%= #image_tag(@shop.image_url) if @shop.image? %><br>
     <%= f.label 'Foto da loja' %><br>
     <%= f.file_field :image %>
   </div>
