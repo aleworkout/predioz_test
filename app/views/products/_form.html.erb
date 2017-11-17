@@ -12,7 +12,6 @@
   <% end %>
   
   <div class="field">
-    <%= #image_tag(@product.image_url) if @product.image? %><br>
     <%= f.label "Foto de Producto" %><br>
     <%= f.file_field :image %>
   </div>
@@ -21,7 +20,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label "precio" %><br>
+    <%= f.label "Precio" %><br>
     <%= f.number_field :price %>
   </div>
   <div class="field">
