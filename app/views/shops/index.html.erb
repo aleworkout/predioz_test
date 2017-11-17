@@ -3,18 +3,18 @@
 <div>
     <%= search_form_for @q do |f| %>
   
-    <%= f.label "Loja" %>
+    <%= f.label "Tienda" %>
     <%= f.search_field :name_cont %>
   
-    <%= f.submit "Procurar" %>
+    <%= f.submit "Buscar" %>
   
     <% end %>
 </div>
 
 <h1>Todas as lojas</h1>
-<%= link_to "Minhas lojas", user_shops_path(@shops), role: 'button', class: 'btn btn-success btn-xs' %>
+<%= link_to "Mis Tiendas", user_shops_path(@shops), role: 'button', class: 'btn btn-success btn-xs' %>
 <hr />
-<%= link_to 'Nova loja', new_shop_path, role: 'button', class: 'btn btn-warning btn-block' %>
+<%= link_to 'Nueva tienda', new_shop_path, role: 'button', class: 'btn btn-warning btn-block' %>
   <div class="row">
     <br />
     <% @shops.each do |shop| %>
@@ -37,10 +37,10 @@
               </ul>
             <% end %>
             <p>
-            <%= link_to 'Entrar na loja', shop, role: 'button', class: 'btn btn-success btn-sm' %>
+            <%= link_to 'Entrar', shop, role: 'button', class: 'btn btn-success btn-sm' %>
             <% if current_user.id == shop.user_id %>
               <%= link_to 'Editar', edit_shop_path(shop), role: 'button', class: 'btn btn-success btn-sm' %>
-              <%= link_to 'Apagar', shop, method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class: 'btn btn-success btn-sm' %>
+              <%= link_to 'Eliminar', shop, method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class: 'btn btn-success btn-sm' %>
             <% end %>  
             </p>
           </div>
@@ -51,4 +51,4 @@
 
 <br>
 
-<%= link_to 'Nova loja', new_shop_path, role: 'button', class: 'btn btn-warning btn-block' %>
+<%= link_to 'Nueva Tienda', new_shop_path, role: 'button', class: 'btn btn-warning btn-block' %>

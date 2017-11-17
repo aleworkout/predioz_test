@@ -4,12 +4,12 @@
 <h3><%= @product.shop.number %></h3>
             <% if @product.shop.whatsapp %>
               <ul>
-                <li>Tenho Whatsapp</li>
+                <li>Tenemos Whatsapp</li>
               </ul>
             <% end %>
             <% if @product.shop.phone %>
               <ul>
-                <li>Pode me ligar</li>
+                <li>Puedes llamarnos</li>
               </ul>
             <% end %>
             
@@ -32,6 +32,6 @@
   </div>
 
 
-<%= link_to 'Voltar', products_path, role: 'button', class: 'btn btn-success btn-sm' %>
+<%= link_to 'Volver', products_path, role: 'button', class: 'btn btn-success btn-sm' %>
 
 

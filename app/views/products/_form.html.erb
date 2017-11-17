@@ -13,23 +13,23 @@
   
   <div class="field">
     <%= #image_tag(@product.image_url) if @product.image? %><br>
-    <%= f.label 'Foto do produto' %><br>
+    <%= f.label "Foto de Producto" %><br>
     <%= f.file_field :image %>
   </div>
   <div class="field">
-    <%= f.label 'Nome do produto' %><br>
+    <%= f.label "Nombre de producto" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label 'Preço' %><br>
+    <%= f.label "precio" %><br>
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label 'Detalhes' %><br>
+    <%= f.label "Descripción" %><br>
     <%= f.text_area :detail %>
   </div>
   <div class="field">
-    <%= f.label 'Escolha a loja que precisa' %><br>
+    <%= f.label "Escoga la tienda en la que agregara el Producto" %><br>
     <%= f.collection_select :shop_id, @shops, :id, :name %>
   </div>
   <div class="actions">

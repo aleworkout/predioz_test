@@ -4,22 +4,22 @@
 <h3><%= @shop.number %></h3>
             <% if @shop.whatsapp %>
               <ul>
-                <li>Tenho Whatsapp</li>
+                <li>Tenenemos Whatsapp</li>
               </ul>
             <% end %>
             <% if @shop.phone %>
               <ul>
-                <li>Pode me ligar</li>
+                <li>Puedes llamarnos</li>
               </ul>
             <% end %>
             
   <div>
     <%= search_form_for @q do |f| %>
   
-    <%= f.label "Produto" %>
+    <%= f.label "Producto" %>
     <%= f.search_field :name_cont %>
   
-    <%= f.submit "Procurar" %>
+    <%= f.submit "Buscar" %>
   
     <% end %>
   </div>
@@ -35,10 +35,10 @@
             <h3><%= product.name %></h3>
             <p>$<%= product.price %> (CLP)</p>
             <p>
-            <%= link_to 'Veja o produto', product, role: 'button', class: 'btn btn-success btn-sm' %>
+            <%= link_to 'Ver Producto', product, role: 'button', class: 'btn btn-success btn-sm' %>
             <% if current_user.id == product.shop.user_id %>
               <%= link_to 'Editar', edit_product_path(product), role: 'button', class: 'btn btn-success btn-sm' %>
-              <%= link_to 'Apagar', product, method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class: 'btn btn-success btn-sm' %>
+              <%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class: 'btn btn-success btn-sm' %>
             <% end %>
             </p>
           </div>
@@ -50,8 +50,8 @@
 
 <br>
 <% if current_user.id == @shop.user_id %>
-<%= link_to 'Criar um produto', new_product_path, role: 'button', class: 'btn btn-success btn-sm' %> |
-<%= link_to 'Editar minha loja', edit_shop_path(@shop), role: 'button', class: 'btn btn-success btn-sm' %> 
+<%= link_to 'Crear un producto', new_product_path, role: 'button', class: 'btn btn-success btn-sm' %> |
+<%= link_to 'Editar Tienda', edit_shop_path(@shop), role: 'button', class: 'btn btn-success btn-sm' %> 
 <% end %>
 <hr />
-<%= link_to 'Voltar', shops_path, role: 'button', class: 'btn btn-success btn-sm' %>
+<%= link_to 'Volver', shops_path, role: 'button', class: 'btn btn-success btn-sm' %>
