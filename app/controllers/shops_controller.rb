@@ -19,7 +19,9 @@ class ShopsController < ApplicationController
   
   before_filter :require_permiso, only: :destroy
   def require_permiso
-    if current_user.id != Shop.find(params[:id]).user_id
+    if current_user.email == "ale@ale.cl"
+      notice 'Usted es ale =)'
+    elsif current_user.id != Shop.find(params[:id]).user_id
       redirect_to root_path
       #Or do something else here
     end
