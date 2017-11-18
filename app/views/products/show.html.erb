@@ -22,8 +22,10 @@
             <p>$<%= @product.price %>.-</p>
             <p><%= @product.detail %></p>
             <p>
+            <% if user_signed_in? %>
             <% if current_user.id == @product.user_id %>
               <%= link_to 'Editar', edit_product_path(@product), role: 'button', class: 'btn btn-success btn-sm' %>
+            <% end %>
             <% end %>
             </p>
           </div>

@@ -36,9 +36,11 @@
             <p>$<%= product.price %> (CLP)</p>
             <p>
             <%= link_to 'Ver Producto', product, role: 'button', class: 'btn btn-success btn-sm' %>
+            <% if user_signed_in? %>
             <% if current_user.id == product.shop.user_id %>
               <%= link_to 'Editar', edit_product_path(product), role: 'button', class: 'btn btn-success btn-sm' %>
               <%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class: 'btn btn-success btn-sm' %>
+            <% end %>
             <% end %>
             </p>
           </div>
@@ -49,9 +51,11 @@
   </div>
 
 <br>
+<% if user_signed_in? %>
 <% if current_user.id == @shop.user_id %>
 <%= link_to 'Crear un producto', new_product_path, role: 'button', class: 'btn btn-success btn-sm' %> |
 <%= link_to 'Editar Tienda', edit_shop_path(@shop), role: 'button', class: 'btn btn-success btn-sm' %> 
+<% end %>
 <% end %>
 <hr />
 <%= link_to 'Volver', shops_path, role: 'button', class: 'btn btn-success btn-sm' %>
