@@ -12,7 +12,9 @@
 </div>
 
 <h1>Todas las Tiendas</h1>
+<% if user_signed_in? %>
 <%= link_to "Mis Tiendas", user_shops_path(@shops), role: 'button', class: 'btn btn-success btn-xs' %>
+<% end %>
 <hr />
 <% if user_signed_in? %>
 <%= link_to 'Nueva tienda', new_shop_path, role: 'button', class: 'btn btn-warning btn-block' %>
