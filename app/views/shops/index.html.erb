@@ -14,7 +14,9 @@
 <h1>Todas las Tiendas</h1>
 <%= link_to "Mis Tiendas", user_shops_path(@shops), role: 'button', class: 'btn btn-success btn-xs' %>
 <hr />
+<% if user_signed_in? %>
 <%= link_to 'Nueva tienda', new_shop_path, role: 'button', class: 'btn btn-warning btn-block' %>
+<% end %>
   <div class="row">
     <br />
     <% @shops.each do |shop| %>
@@ -52,5 +54,6 @@
   </div>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'Nueva Tienda', new_shop_path, role: 'button', class: 'btn btn-warning btn-block' %>
+<% end %>
