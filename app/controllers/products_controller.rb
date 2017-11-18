@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
     @product.user_id = current_user.id if current_user
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'O produto foi criado com sucesso.' }
+        format.html { redirect_to @product, notice: 'Producto creado exitosamente.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'O produto foi atualizado com sucesso.' }
+        format.html { redirect_to @product, notice: 'Producto actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -49,7 +49,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'O produto foi excluído com sucesso.' }
+      format.html { redirect_to products_url, notice: 'Producto eliminado exitosamente.' }
       format.json { head :no_content }
     end
   end
