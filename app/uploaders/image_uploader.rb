@@ -1,8 +1,9 @@
 class ImageUploader < CarrierWave::Uploader::Base
-
+  require "mini_magick"
+  
   storage :fog
   
-  version :image do
+  version :thumb do
     process resize_to_fill: [280, 280]
   end
 
